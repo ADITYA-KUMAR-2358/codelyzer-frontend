@@ -1,4 +1,4 @@
-import { Circle as XCircle, ExternalLink, PartyPopper, Chrome as Home } from 'lucide-react';
+import { Circle as XCircle, ExternalLink, PartyPopper, Chromium as Home } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { cn } from '../lib/utils';
