@@ -116,8 +116,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-emerald-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 py-6 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-7xl">
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-cyan-50 to-emerald-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 py-4 sm:py-6 md:py-8 px-3 sm:px-4 md:px-6 lg:px-8">
+      <div className="w-full container mx-auto max-w-7xl">
         {state === 'home' ? (
           <HomePage onGetStarted={handleGetStarted} />
         ) : state === 'form' || state === 'submitting' ? (

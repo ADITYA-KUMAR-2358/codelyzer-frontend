@@ -35,46 +35,46 @@ export function StepIndicator({ step, currentStep, isFailed }: StepIndicatorProp
   return (
     <div
       className={cn(
-        'flex items-center gap-4 py-4 px-5 rounded-xl transition-all duration-300',
+        'flex items-center gap-2 sm:gap-3 md:gap-4 py-3 sm:py-4 px-3 sm:px-4 md:px-5 rounded-lg sm:rounded-xl transition-all duration-300',
         isCompleted && 'bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500',
-        isCurrent && 'bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 shadow-md scale-105',
+        isCurrent && 'bg-primary/5 dark:bg-primary/10 border-l-4 border-primary shadow-md scale-[1.02] sm:scale-105',
         isFailedStep && 'bg-red-50 dark:bg-red-950/30 border-l-4 border-red-500',
         !isCompleted && !isCurrent && !isFailedStep && 'bg-slate-50 dark:bg-slate-800/30 border-l-4 border-slate-300 dark:border-slate-700'
       )}
     >
       <div className="flex-shrink-0">
         {isFailedStep ? (
-          <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center">
-            <XCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center">
+            <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 dark:text-red-400" />
           </div>
         ) : isCompleted ? (
-          <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center">
-            <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center">
+            <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 dark:text-green-400" />
           </div>
         ) : isCurrent ? (
-          <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-            <Loader2 className="w-5 h-5 text-blue-600 dark:text-blue-400 animate-spin" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 flex items-center justify-center">
+            <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary animate-spin" />
           </div>
         ) : (
-          <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-            <Circle className="w-5 h-5 text-slate-400 dark:text-slate-600" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+            <Circle className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 dark:text-slate-600" />
           </div>
         )}
       </div>
       <div className="flex-1">
         <p
           className={cn(
-            'text-base font-medium transition-colors',
+            'text-sm sm:text-base font-medium transition-colors',
             isFailedStep && 'text-red-700 dark:text-red-300 font-semibold',
             isCompleted && 'text-green-700 dark:text-green-300',
-            isCurrent && 'text-blue-700 dark:text-blue-300 font-bold text-lg',
+            isCurrent && 'text-primary dark:text-primary font-bold text-base sm:text-lg',
             !isCompleted && !isCurrent && !isFailedStep && 'text-slate-500 dark:text-slate-400'
           )}
         >
           {step.label}
         </p>
         {isCurrent && (
-          <p className="text-xs text-blue-600 dark:text-blue-400 mt-1 animate-pulse">
+          <p className="text-[10px] sm:text-xs text-primary mt-0.5 sm:mt-1 animate-pulse">
             In progress...
           </p>
         )}

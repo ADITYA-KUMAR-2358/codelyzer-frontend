@@ -26,7 +26,7 @@ export function RepositoryForm({ onSubmit, isLoading, onBack }: RepositoryFormPr
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-6 py-8 animate-in slide-in-from-bottom duration-500">
+    <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6 py-4 sm:py-6 md:py-8 px-2 sm:px-0 animate-in slide-in-from-bottom duration-500">
       {onBack && !isLoading && (
         <Button
           variant="outline"
@@ -39,24 +39,24 @@ export function RepositoryForm({ onSubmit, isLoading, onBack }: RepositoryFormPr
       )}
 
       <Card className="shadow-2xl border-2 border-primary/20 bg-gradient-to-br from-white via-slate-50 to-primary/5 dark:from-slate-900 dark:via-slate-800 dark:to-primary/10">
-        <CardHeader className="text-center space-y-4 pb-8 pt-8">
+        <CardHeader className="text-center space-y-3 sm:space-y-4 pb-6 sm:pb-8 pt-6 sm:pt-8 px-4">
           <div className="flex items-center justify-center gap-3">
             <div className="relative">
-              <Github className="w-14 h-14 text-slate-800 dark:text-slate-200" />
-              <Sparkles className="w-7 h-7 text-primary absolute -top-1 -right-1 animate-pulse" />
+              <Github className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-slate-800 dark:text-slate-200" />
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary absolute -top-1 -right-1 animate-pulse" />
             </div>
-            <CardTitle className="text-5xl font-bold bg-gradient-to-r from-primary via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
+            <CardTitle className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
               Codelyzer
             </CardTitle>
           </div>
-          <CardDescription className="text-xl text-slate-700 dark:text-slate-300 font-medium">
+          <CardDescription className="text-base sm:text-lg md:text-xl text-slate-700 dark:text-slate-300 font-medium px-2">
             Enter your GitHub repository to begin analysis
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-8 px-8 pb-10">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-4">
-              <Label htmlFor="repo-url" className="text-xl font-semibold text-slate-800 dark:text-slate-200">
+        <CardContent className="space-y-6 sm:space-y-8 px-4 sm:px-6 md:px-8 pb-8 sm:pb-10">
+          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+            <div className="space-y-3 sm:space-y-4">
+              <Label htmlFor="repo-url" className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200">
                 GitHub Repository URL
               </Label>
               <Input
@@ -66,15 +66,15 @@ export function RepositoryForm({ onSubmit, isLoading, onBack }: RepositoryFormPr
                 value={repoUrl}
                 onChange={(e) => setRepoUrl(e.target.value)}
                 disabled={isLoading}
-                className="text-lg h-16 border-2 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all rounded-lg"
+                className="text-base sm:text-lg h-12 sm:h-14 md:h-16 border-2 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all rounded-lg"
               />
-              <p className="text-base text-slate-600 dark:text-slate-400">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
                 Paste the full URL of any public GitHub repository
               </p>
             </div>
             <Button
               type="submit"
-              className="w-full h-16 text-xl font-bold bg-primary hover:bg-primary/90 text-white shadow-2xl hover:shadow-primary/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02]"
+              className="w-full h-12 sm:h-14 md:h-16 text-base sm:text-lg md:text-xl font-bold bg-primary hover:bg-primary/90 text-white shadow-2xl hover:shadow-primary/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02]"
               disabled={!isValidUrl(repoUrl) || isLoading}
             >
               {isLoading ? (

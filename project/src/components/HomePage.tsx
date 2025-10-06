@@ -63,52 +63,52 @@ export function HomePage({ onGetStarted }: HomePageProps) {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto space-y-16 py-4">
-      <div className="text-center space-y-8 pt-4">
+    <div className="w-full max-w-7xl mx-auto space-y-8 sm:space-y-12 md:space-y-16 py-2 sm:py-4">
+      <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 pt-2 sm:pt-4">
         <div className="flex items-center justify-center gap-3">
           <div className="relative">
-            <Github className="w-20 h-20 text-slate-800 dark:text-slate-200" />
-            <Sparkles className="w-9 h-9 text-primary absolute -top-2 -right-2 animate-pulse" />
+            <Github className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-slate-800 dark:text-slate-200" />
+            <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-primary absolute -top-1 -right-1 sm:-top-2 sm:-right-2 animate-pulse" />
           </div>
         </div>
-        <div className="space-y-4">
-          <Badge variant="secondary" className="text-sm px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
+        <div className="space-y-3 sm:space-y-4">
+          <Badge variant="secondary" className="text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-1.5 bg-primary/10 text-primary border-primary/20">
             AI-Powered Code Analysis
           </Badge>
-          <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary via-cyan-500 to-emerald-500 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary via-cyan-500 to-emerald-500 bg-clip-text text-transparent leading-tight px-2">
             Codelyzer
           </h1>
         </div>
-        <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 max-w-4xl mx-auto font-medium">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-700 dark:text-slate-300 max-w-4xl mx-auto font-medium px-4">
           Automated Code Analysis & Improvement powered by AI
         </p>
-        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed px-4">
           Transform your GitHub repositories with intelligent static analysis and AI-generated fixes.
           Get automated pull requests with code improvements in minutes.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 pt-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 pt-2 sm:pt-4 px-4">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</div>
-              <div className="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">{stat.value}</div>
+              <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-2 sm:px-0">
         {features.map((feature, index) => (
           <Card
             key={index}
             className="border-2 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:border-primary/50 group bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800"
           >
             <CardHeader>
-              <div className="mb-4 p-3 bg-slate-100 dark:bg-slate-800 rounded-xl w-fit group-hover:scale-110 transition-transform">{feature.icon}</div>
-              <CardTitle className="text-xl font-bold">{feature.title}</CardTitle>
+              <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-slate-100 dark:bg-slate-800 rounded-xl w-fit group-hover:scale-110 transition-transform">{feature.icon}</div>
+              <CardTitle className="text-lg sm:text-xl font-bold">{feature.title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-base leading-relaxed">
+              <CardDescription className="text-sm sm:text-base leading-relaxed">
                 {feature.description}
               </CardDescription>
             </CardContent>
@@ -116,25 +116,25 @@ export function HomePage({ onGetStarted }: HomePageProps) {
         ))}
       </div>
 
-      <div className="text-center space-y-8 pb-4">
-        <div className="bg-gradient-to-br from-primary/5 via-cyan-50 to-emerald-50 dark:from-primary/10 dark:via-slate-900 dark:to-slate-800 rounded-3xl p-10 md:p-12 border-2 border-primary/30 shadow-xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-slate-100">
+      <div className="text-center space-y-6 sm:space-y-8 pb-2 sm:pb-4 px-2 sm:px-0">
+        <div className="bg-gradient-to-br from-primary/5 via-cyan-50 to-emerald-50 dark:from-primary/10 dark:via-slate-900 dark:to-slate-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border-2 border-primary/30 shadow-xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-slate-800 dark:text-slate-100">
             Ready to improve your code?
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 mb-8 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4">
             Start by submitting your GitHub repository and let AI do the heavy lifting
           </p>
           <Button
             onClick={onGetStarted}
             size="lg"
-            className="text-lg px-10 py-7 bg-primary hover:bg-primary/90 text-white font-bold shadow-2xl hover:shadow-primary/50 transition-all duration-300 group hover:scale-105"
+            className="text-base sm:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-6 md:py-7 bg-primary hover:bg-primary/90 text-white font-bold shadow-2xl hover:shadow-primary/50 transition-all duration-300 group hover:scale-105 w-full sm:w-auto"
           >
             Get Started
-            <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm text-slate-500 dark:text-slate-400 px-4">
           <div className="flex items-center gap-2">
             <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
             <span className="font-medium">Free to use</span>
