@@ -1,7 +1,7 @@
-import { Circle as XCircle, ExternalLink, PartyPopper, Chromium as Home } from 'lucide-react';
+import { ExternalLink, House as Home, PartyPopper, Circle as XCircle } from 'lucide-react';
+import { cn } from '../lib/utils';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
-import { cn } from '../lib/utils';
 
 interface ResultDisplayProps {
   type: 'success' | 'error';
