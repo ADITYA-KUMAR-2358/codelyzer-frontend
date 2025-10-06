@@ -116,18 +116,16 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-950 dark:via-blue-950 dark:to-purple-950 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-emerald-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 py-6 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         {state === 'home' ? (
           <HomePage onGetStarted={handleGetStarted} />
         ) : state === 'form' || state === 'submitting' ? (
-          <div className="space-y-8 pt-8">
-            <RepositoryForm
-              onSubmit={handleSubmit}
-              isLoading={state === 'submitting'}
-              onBack={handleBackToHome}
-            />
-          </div>
+          <RepositoryForm
+            onSubmit={handleSubmit}
+            isLoading={state === 'submitting'}
+            onBack={handleBackToHome}
+          />
         ) : state === 'processing' ? (
           <div className="space-y-6 pt-8 max-w-5xl mx-auto">
             <RepositoryInfo repoUrl={repoUrl} onBack={handleBackToHome} />
